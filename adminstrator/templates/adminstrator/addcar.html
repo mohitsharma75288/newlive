@@ -1,0 +1,139 @@
+    
+
+ {% extends "index1.html" %}
+  {% load static %}
+
+    {% block content %}
+
+<!-- start banner Area -->
+<style>
+         div.container{
+            margin-left:350px;
+         }
+ </style>
+            <section class="banner-area relative" id="home">    
+                <div class="overlay overlay-bg"></div>
+                <div class="container">
+                    <div class="row d-flex align-items-topmiddle justify-content-topmiddle">
+                        <div class="about-content col-lg-12">
+                            <h1 class="text-white">
+                                Contact Us
+                            </h1>   
+                            <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Contact Us</a></p>
+                        </div>                                          
+                    </div>
+                </div>
+            </section>
+            <!-- End banner Area -->    
+
+            <!-- Start contact-page Area -->
+            <section class="contact-page-area section-gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 d-flex flex-column address-wrap">
+                            <div class="single-contact-address d-flex flex-row">
+                                <div class="icon">
+                                    <span class="lnr lnr-home"></span>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Dhaka, Bangladesh</h5>
+                                    <p>56/8, West Panthapath</p>
+                                </div>
+                            </div>
+                            <div class="single-contact-address d-flex flex-row">
+                                <div class="icon">
+                                    <span class="lnr lnr-phone-handset"></span>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>00 (880) 9865 562</h5>
+                                    <p>Mon to Fri 9am to 6 pm</p>
+                                </div>
+                            </div>
+                            <div class="single-contact-address d-flex flex-row">
+                                <div class="icon">
+                                    <span class="lnr lnr-envelope"></span>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>support@codethemes.com</h5>
+                                    <p>Send us your query anytime!</p>
+                                </div>
+                            </div>                                                      
+                        </div>
+                        <div class="col-lg-8">
+                            <form class="form-area " id="formid" enctype="multipart/form-data" 
+                                         action="{% if editCarObject %}/updatecar{% else %}addcar{% endif %}" method="post" class="contact-form text-right">
+                                         {% csrf_token %}
+                                          <div class="row"> 
+                                        <div class="col-md-6 form-group">
+
+                                        <input name="hdnCarId" type="hidden"
+                                        value="{% if editCarObject %} {{editCarObject.id}} {% endif %}">
+                                         <h>Enter car name</h>
+                                        <input name="name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car name'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.name}} {% endif %}">
+                                        <h>Enter car MSI</h>
+                                        
+                                        <input name="msi" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car msi'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.msi}} {% endif %}">
+                            
+                                        <h>Enter Car Price</h>
+                                        <input name="price" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car price'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.price}} {% endif %}">
+                                         
+                                        
+                                        <div class="mt-20 alert-msg" style="text-align: left;"></div>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                          <h>Enter Car Capacity<h>
+                                        <input name="capacity" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car capacity'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.capacity}} {% endif %}">
+                                    
+                                         <h>Enter Car Air Condition</h>
+                                        <input name="aircondition" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car aircondition'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.aircondition}} {% endif %}">
+                                         <h>Enter Car Transmission</h>
+                                        <input name="transmission"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter car transmission'" class="common-input mb-20 form-control" required="" type="text"
+                                        value="{% if editCarObject %} {{editCarObject.transmission}} {% endif %}">
+
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                      <h>choose file</h>
+                                    <input name="carimage" onfocus="this.placeholder = ''" onblur="this.placeholder = " class="common-input mb-20 form-control" type="file">
+                                    </div>
+
+                                    <div class="col-md-6 form-group">
+                                        {% if editCarObject %}
+                                            <img src="{{editCarObject.carimage}}"
+                                            style="width:100px;height: 50px;margin-bottom: 10px;">
+                                         {% endif %}
+                                         
+                                        <input name="hdnImage" type="hidden"
+                                        value="{% if editCarObject %} {{editCarObject.carimage}} {% endif %}">
+
+                                    </div>
+
+                                    <div class="col-md-12 form-group">
+                                       <h>Enter Car discription</h>
+                                    <textarea class="common-textarea form-control" style="resize: none;" 
+                                    name="description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Car description'" required="">{% if editCarObject %} {{editCarObject.description}} {% endif %}</textarea>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                                     <script>
+                                        $(document).ready(function(){
+                                                     $("button").click(function(){
+                                                             alert("your data save succesfully");
+                                                                });
+                                                                });
+                                    </script>
+                                   <button>Submit</button>  
+                                     <button href="/carlist" class="primary-btn mt-20 text-white">Cancel</button>
+                                
+                                     </div>
+                                </div>
+                            </form> 
+                        </div>
+                    </div>
+                </div>  
+            </section>
+            <!-- End contact-page Area -->
+        
+    {% endblock %}

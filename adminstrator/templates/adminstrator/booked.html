@@ -1,0 +1,64 @@
+ {% extends "index1.html" %}
+  {% load static %}
+
+    {% block content %}
+    <style>
+         #container{
+            width: 100%;
+            margin-left:250px;
+            font-size: 30px;
+
+         }
+ </style>
+ <div id="container">
+<form method="post" action="">
+	{% csrf_token %}
+	 <div id="container">
+  <table border=1px solid black>
+  <tr>
+  <th>NAME</th>
+  <td>
+		<input type="text" name="name"></td>
+		</tr>
+		<tr>
+		<th>Email Address</th>
+		<td>
+		<input type="email" name="email"></td>
+		</tr>
+		<tr>
+		<th>Phone number</th>
+		<td>
+	   <input type="tel" name="phone"></td>
+	   </tr>
+				<tr>
+				<th>From Destinations</th>
+				<td>
+						<select>
+							<option value="" disabled selected hidden>Destinations</option>
+							<option value="1">ludhiana</option>
+							<option value="2">delhi</option>
+							<option value="3">mohali</option></td>
+							</tr>
+							<tr>
+							<th>To destinations</th>
+							<td>
+							</select>
+								  <select>
+									<option value="" disabled selected hidden>Destination</option>
+									<option value="1">ludhiana</option>
+									<option value="2">panchkula</option>
+								    <option value="3">raipur</option>
+										</select>
+										<tr>
+										<th>Date and Time</th>
+										<td><input type="date" name="date and time"></td>                    
+										</tr>
+		
+                                      <td>
+                                    
+										</td>
+										</table>
+									</div>
+										</form>		
+										
+										{% endblock %}				

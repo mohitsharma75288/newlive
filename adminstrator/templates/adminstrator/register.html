@@ -1,0 +1,66 @@
+ {% extends "index1.html" %}
+  {% load static %}
+
+    {% block content %}
+    <form method="post" action="">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+	<style>
+		#container{
+         	margin-left:375px;
+         	font-size:18px;
+         }
+         <div id="container">
+       <p>
+           <label>firstname</label>
+            <input type="text" name="firstname" placeholder="Enter your first name">
+        </p>
+        <p>
+            <label>last_name</label>
+            <input type="text" name="lastname" placeholder="Enter your last name">
+        </p>
+        <p>
+            <label>country</label>
+            <select name="country">
+                <option value="india">india</option>
+                <option value="canada">canada</option>
+                <option value="america">america</option>
+                <option value="pakistan">pakistan</option>
+                <option value="sweden">sweden</option>
+                <option value="dubai">dubai</option>
+                <option value="kuwait">kuwait</option>
+                <option value="australia">australia</option>
+                <option value="thailand">thailand</option>
+            </select>
+        </p>
+        <p>
+            <label>usertype</label>
+            <input type="radio" name="usertype" value="client">client
+            <input type="radio" name="usertype" value="lawyer">lawyer
+        </p>
+        <p>
+            <label>email</label>
+            <input type="text" name="email" placeholder="enter email">
+        </p>
+        <p>
+            <label>username</label>
+            <input type="text" name="username" placeholder="enter your username">
+        </p>
+        <p>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="enter your password">
+        </p>
+        <button type="submit">signup</button><a href="/adminstrator/deco">Login</a>
+    </form>
+</div>
+
+
+
+</body>
+</form>
+{% endblock %}

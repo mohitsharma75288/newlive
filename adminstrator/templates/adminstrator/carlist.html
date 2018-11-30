@@ -1,0 +1,84 @@
+
+
+{% extends "index1.html" %}
+	{% load static %}
+    {% block content %}
+        
+
+
+    	<!-- start banner Area -->
+    	    <style>
+    	    div.container{
+         	margin-left:375px;
+         }
+     </style>
+			
+	                                   {% if carLst %}
+  
+			<!-- Start team Area -->
+			<section class="team-area section-gap team-page-teams" id="team">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-12">
+							<div class="title text-center">
+								<h1 class="mb-10">Cars Collections</h1>
+								<p>Who are in extremely love with eco friendly system.</p>
+							</div>
+							<div>
+								<table class="table table-striped">
+								    <thead>
+								      <tr>
+								      	<th>Image</th>
+								        <th>Name</th>
+								        <th>MSI</th>
+								        <th>Price</th>
+								        <th>Capacity</th>
+								        <th>AirCondition</th>
+								        <th>Transmission</th>
+								        <th>Action</th>
+								      </tr>
+								    </thead>
+								    <tbody>
+								    	{% for car in carLst%}
+								    		<tr>
+								    			<td><img src="{{car.carimage }}" style="width:100px;height:70px;" /> </td>	
+								    			<td>{{ car.name }}</td>	
+								    			<td>{{ car.msi }}</td>	
+								    			<td>{{ car.price }}</td>	
+								    			<td>{{ car.capacity }}</td>	
+								    			<td>{{ car.aircondition }}</td>	
+								    			<td>{{ car.transmission }}</td>	
+								    			<td><a href="editcar/{{car.id}}"><img src="https://cdn1.iconfinder.com/data/icons/basic-ui-elements-color/700/09_pencil-512.png" height="30" width="30">Edit</a>
+								    				<a href="deletecar/{{car.id}}"><img src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png" height="30" width="30">Delete</a>
+								    			</td>
+								    		</tr>		
+								    	{% endfor %}
+								    </tbody>
+								  </table>
+							</div>
+						</div>
+					</div>		
+				</div>				
+			</section>
+    
+    {% else %}
+
+			<!-- Start team Area -->
+			<section class="team-area section-gap team-page-teams" id="team">
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-12">
+							<div class="title text-center">
+								<h1 class="mb-10">Cars Collections</h1>
+								<p>No record found </p>
+							</div>
+							
+						</div>
+					</div>		
+				</div>				
+			</section>
+
+
+    {% endif%}
+					
+	{% endblock %}

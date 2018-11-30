@@ -1,0 +1,46 @@
+{% extends "index1.html" %}
+  {% load static %}
+
+    {% block content %}
+<form method="POST"action="">
+	{% csrf_token %}
+	<style>
+		#container{
+         	margin-left:375px;
+         	font-size:18px;
+         }
+     </style>
+			
+
+	</style>
+	<div id="container">
+	<html>
+		
+<head>
+<title>Login Page</title>
+</head>
+<body>
+<form method="post" action="">
+<table width="80%" bgcolor="0099CC" align="center" height="200px">
+
+
+
+<tr>
+<td>Username:</td>
+
+<td><input type="text" name="username"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" name="password"></td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Login"></td>
+<td ><input type="Reset"></td>
+</tr>
+</div>
+</table>
+</form>
+{% endblock %}
