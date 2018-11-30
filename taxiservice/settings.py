@@ -25,7 +25,7 @@ SECRET_KEY = 'yhotdehcdsmt!5+gol-1(&s+(rdo176v_3f4bzj0ngymx+#r&#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost', 'http://taxiserviceap.herokuapp.com/' 'https://taxiserviceap.herokuapp.com/']
+ALLOWED_HOSTS = ['*', '127.0.0.1', 'localhost', 'http://taxiservice.herokuapp.com/' 'https://taxiservice.herokuapp.com/']
 
 # Application definition
 
